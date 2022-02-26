@@ -536,7 +536,6 @@
     url: jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC
     username: root
     password: root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li>properties版:</li>
 </ul>
@@ -544,9 +543,6 @@
 <span class="token attr-name">spring.datasource.url</span><span class="token punctuation">=</span><span class="token attr-value">jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC</span>
 <span class="token attr-name">spring.datasource.username</span><span class="token punctuation">=</span><span class="token attr-value">root</span>
 <span class="token attr-name">spring.datasource.password</span><span class="token punctuation">=</span><span class="token attr-value">root</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <blockquote>
 <p>MySql 的url 参数详解:</p>
 </blockquote>
@@ -558,7 +554,8 @@
 <th>缺省值</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>user</td>
 <td>用户名</td>
 <td></td>
@@ -633,21 +630,13 @@
 <td>允许批量更新</td>
 <td>false</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <blockquote>
 <p>在xml配置文件中, url的<code>&amp;</code>符号需要转义成<code>&amp;amp;</code></p>
-<p>例如在tomcat的server.xml中配置时样式为下<span class="github-emoji"><span>👇</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f447.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<p>例如在tomcat的server.xml中配置时样式为下👇</p>
 </blockquote>
 <pre class="line-numbers language-xml" data-language="xml"><code class="language-xml">jdbc:mysql://localhost:3306/test?user=root<span class="token entity named-entity" title="&amp;">&amp;amp;</span>password=<span class="token entity named-entity" title="&amp;">&amp;amp;</span>useUnicode=true<span class="token entity named-entity" title="&amp;">&amp;amp;</span>characterEncoding=utf8<span class="token entity named-entity" title="&amp;">&amp;amp;</span>autoReconnect=true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
-
-
-
-
-
 
                 
             </div>
