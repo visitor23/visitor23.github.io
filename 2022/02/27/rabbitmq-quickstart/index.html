@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Util, 丁兆龙的博客">
+    <meta name="keywords" content="RabbitMQ-quickStart, 丁兆龙的博客">
     <meta name="description" content="丁兆龙的博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Util | 丁兆龙的博客</title>
+    <title>RabbitMQ-quickStart | 丁兆龙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -322,12 +322,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://r7lh60uut.hb-bkt.clouddn.com/RabbitMQ/RabbitMQ.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Util</h1>
+                    <h1 class="description center-align post-title">RabbitMQ-quickStart</h1>
                 </div>
             </div>
         </div>
@@ -447,16 +447,12 @@
                                 <span class="chip bg-color">后端</span>
                             </a>
                         
-                            <a href="/tags/JDBC/">
-                                <span class="chip bg-color">JDBC</span>
+                            <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">
+                                <span class="chip bg-color">消息队列</span>
                             </a>
                         
-                            <a href="/tags/MySql/">
-                                <span class="chip bg-color">MySql</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                                <span class="chip bg-color">数据库</span>
+                            <a href="/tags/RabbitMQ/">
+                                <span class="chip bg-color">RabbitMQ</span>
                             </a>
                         
                     </div>
@@ -467,8 +463,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
-                                工具
+                            <a href="/categories/quickStart/" class="post-category">
+                                quickStart
                             </a>
                         
                     </div>
@@ -494,14 +490,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    418
+                    898
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -524,119 +520,185 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>SpringBoot 配置文件的MySql数据库连接:</p>
-</blockquote>
-<ul>
-<li>yml版:</li>
-</ul>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC
-    username: root
-    password: root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>properties版:</li>
-</ul>
-<pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"><span class="token attr-name">spring.datasource.driver-class-name</span><span class="token punctuation">=</span><span class="token attr-value">com.mysql.cj.jdbc.Driver</span>
-<span class="token attr-name">spring.datasource.url</span><span class="token punctuation">=</span><span class="token attr-value">jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC</span>
-<span class="token attr-name">spring.datasource.username</span><span class="token punctuation">=</span><span class="token attr-value">root</span>
-<span class="token attr-name">spring.datasource.password</span><span class="token punctuation">=</span><span class="token attr-value">root</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+                <h2 id="Maven依赖"><a class="header-anchor" href="#Maven依赖"></a>Maven依赖</h2>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>--</span> <span class="token attr-name">SpringBoot整合RabbitMQ的起步依赖</span> <span class="token attr-name">--</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-amqp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>--</span> <span class="token attr-name">RabbitMQ集成测试</span> <span class="token attr-name">--</span><span class="token punctuation">&gt;</span></span>    
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.amqp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-rabbit-test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="SpringBoot配置"><a class="header-anchor" href="#SpringBoot配置"></a>SpringBoot配置</h2>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
+  port: 8080
+spring:
+  application:
+    # 项目名字
+    name: rabbitmq-demo
+  # 配置RabbitMQ服务器:  主机,端口号,用户名和密码等
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="RabbitMQ主配置类"><a class="header-anchor" href="#RabbitMQ主配置类"></a>RabbitMQ主配置类</h2>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span></span><span class="token class-name">SpringApplication</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>autoconfigure<span class="token punctuation">.</span></span><span class="token class-name">SpringBootApplication</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 启动类上需要加入@EnableRabbit注解,表示开启基于注解的RabbitMQ模式.
+ */</span>
+<span class="token annotation punctuation">@EnableRabbitMQ</span>
+<span class="token annotation punctuation">@SpringBootApplication</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RabbitMQDemoApplication</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">MsgSenderApplication</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>MySql 的url 参数详解:</p>
+<p>RabbitMQ的交换机(Exchange),队列(Queue)以及绑定(Binding)的配置:</p>
+<p><strong>如果仅作为消息消费者,则不需要此配置; 如果添加了此配置,则也具备发送消息的功能.</strong></p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>参数名称</th>
-<th>参数说明</th>
-<th>缺省值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>user</td>
-<td>用户名</td>
-<td></td>
-</tr>
-<tr>
-<td>password</td>
-<td>密码</td>
-<td></td>
-</tr>
-<tr>
-<td>serverTimezone</td>
-<td>设置数据库时区,一般设置为UTC</td>
-<td></td>
-</tr>
-<tr>
-<td>useSSL</td>
-<td>是否进行SSL连接. 高版本设置useSSL=true, 不然会有警告信息</td>
-<td></td>
-</tr>
-<tr>
-<td>useUnicode</td>
-<td>使用Unicode字符集. 如果characterEncoding设置为utf-8, 本参数必须设置为true</td>
-<td>false</td>
-</tr>
-<tr>
-<td>characterEncoding</td>
-<td>当useUnicode设置为true时，指定字符编码. 一般设置为utf-8</td>
-<td>false</td>
-</tr>
-<tr>
-<td>autoReconnect</td>
-<td>当数据库连接异常中断时, 是否自动重新连接</td>
-<td>false</td>
-</tr>
-<tr>
-<td>autoReconnectForPools</td>
-<td>是否使用针对数据库连接池的重连策略</td>
-<td>false</td>
-</tr>
-<tr>
-<td>failOverReadOnly</td>
-<td>自动重连成功后，连接是否设置为只读</td>
-<td>true</td>
-</tr>
-<tr>
-<td>maxReconnects</td>
-<td>autoReconnect设置为true时, 重试连接的次数</td>
-<td>3</td>
-</tr>
-<tr>
-<td>initialTimeout</td>
-<td>autoReconnect设置为true时，两次重连之间的时间间隔. 单位: 秒</td>
-<td>2</td>
-</tr>
-<tr>
-<td>connectTimeout</td>
-<td>和数据库服务器建立socket连接时的超时. 单位: 毫秒.  0表示永不超时</td>
-<td>0</td>
-</tr>
-<tr>
-<td>socketTimeout</td>
-<td>socket操作(读写)超时. 单位: 毫秒.  0表示永不超时</td>
-<td></td>
-</tr>
-<tr>
-<td>zeroDateTimeBehavior</td>
-<td>高版本设置convertToNull, 防止出现Cannot convert value ‘0000-00-00 00:00:00’ from column XX to TIMESTAMP异常</td>
-<td></td>
-</tr>
-<tr>
-<td>allowMultiQueries</td>
-<td>允许批量更新</td>
-<td>false</td>
-</tr>
-</tbody>
-</table>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token class-name">Binding</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token class-name">BindingBuilder</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token class-name">DirectExchange</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token class-name">Queue</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Bean</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Configuration</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">/**
+ * RabbitMQ的配置类
+ */</span>
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DirectRabbitConfig</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">/**
+     * 创建消息队列
+     * 名称 directQueue
+     */</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">Queue</span> <span class="token function">directQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// durable:是否持久化,默认是false,持久化队列：会被存储在磁盘上，当消息代理重启时仍然存在，暂存队列：当前连接有效</span>
+        <span class="token comment">// exclusive:默认也是false，只能被当前创建的连接使用，而且当连接关闭后队列即被删除。此参考优先级高于durable</span>
+        <span class="token comment">// autoDelete:是否自动删除，当没有生产者或者消费者使用此队列，该队列会自动删除。</span>
+
+        <span class="token comment">//一般设置一下队列的持久化就好,其余两个就是默认false</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Queue</span><span class="token punctuation">(</span><span class="token string">"directQueue"</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token comment">/**
+     * 创建交换机, 此交换机是直连交换机(即Direct-Exchange)
+     * 名称 directExchange
+     */</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token class-name">DirectExchange</span> <span class="token function">directExchange</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">DirectExchange</span><span class="token punctuation">(</span><span class="token string">"directExchange"</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 创建绑定, 将消息队列和交换机绑定, 并设置路由键(即Routing-Key)
+     */</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token class-name">Binding</span> <span class="token function">bindingDirect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name">BindingBuilder</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token function">directQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">to</span><span class="token punctuation">(</span><span class="token function">directExchange</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">with</span><span class="token punctuation">(</span><span class="token string">"directRouting"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>在xml配置文件中, url的<code>&amp;</code>符号需要转义成<code>&amp;amp;</code></p>
-<p>例如在tomcat的server.xml中配置时样式为下👇</p>
+<p><strong>消息发送方</strong>的消息推送示例:</p>
 </blockquote>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml">jdbc:mysql://localhost:3306/test?user=root<span class="token entity named-entity" title="&amp;">&amp;amp;</span>password=<span class="token entity named-entity" title="&amp;">&amp;amp;</span>useUnicode=true<span class="token entity named-entity" title="&amp;">&amp;amp;</span>characterEncoding=utf8<span class="token entity named-entity" title="&amp;">&amp;amp;</span>autoReconnect=true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>rabbit<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token class-name">RabbitTemplate</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">GetMapping</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">RestController</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Resource</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>time<span class="token punctuation">.</span></span><span class="token class-name">LocalDateTime</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">HashMap</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Map</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span>UUID<span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@RestController</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SendMessageController</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">/**
+     * 使用RabbitTemplate, 提供了接收/发送等等方法
+     */</span>
+    <span class="token annotation punctuation">@Resource</span>
+    <span class="token class-name">RabbitTemplate</span> rabbitTemplate<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/sendDirectMessage"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">sendDirectMessage</span><span class="token punctuation">(</span><span class="token class-name">String</span> msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token class-name">String</span> messageId <span class="token operator">=</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>UUID<span class="token punctuation">.</span><span class="token function">randomUUID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> createTime <span class="token operator">=</span> <span class="token class-name">LocalDateTime</span><span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">&gt;</span></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"messageId"</span><span class="token punctuation">,</span> messageId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"messageData"</span><span class="token punctuation">,</span> msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"createTime"</span><span class="token punctuation">,</span> createTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//将消息携带绑定键值：TestDirectRouting 发送到交换机TestDirectExchange</span>
+        rabbitTemplate<span class="token punctuation">.</span><span class="token function">convertAndSend</span><span class="token punctuation">(</span><span class="token string">"directExchange"</span><span class="token punctuation">,</span> <span class="token string">"directRouting"</span><span class="token punctuation">,</span> map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"ok"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><strong>消息接收方</strong>消费消息:</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>rabbit<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token operator">*</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span></span><span class="token class-name">Component</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Map</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 创建RabbitMQ的队列监听
+ */</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token annotation punctuation">@RabbitListener</span><span class="token punctuation">(</span>queues <span class="token operator">=</span> <span class="token string">"directQueue"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DirectReceiver</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">/**
+     * @param testMessage 消息队列中的数据, 数据类型与发送的类型相对应
+     */</span>
+    <span class="token annotation punctuation">@RabbitHandler</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">process</span><span class="token punctuation">(</span><span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">&gt;</span></span> testMessage<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"消息队列的接收方收到消息: "</span> <span class="token operator">+</span> testMessage<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="预期结果"><a class="header-anchor" href="#预期结果"></a>预期结果</h2>
+<blockquote>
+<p>需要首先开启RabbitMQ服务器并正确配置连接.</p>
+<p>RabbitMQ管理界面地址:  <a target="_blank" rel="noopener" href="http://localhost:15672/#/">RabbitMQ Management</a></p>
+</blockquote>
+<ol>
+<li>初始状态: 消息队列无消息, 无新建的交换机👇</li>
+</ol>
+<p><img src="http://r7lh60uut.hb-bkt.clouddn.com/RabbitMQ/RabbitMQ%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2.png" alt=""></p>
+<ol start="2">
+<li>消息发送端将消息队列绑定交换机, 并将消息推送到消息队列中👇</li>
+</ol>
+<p><img src="http://r7lh60uut.hb-bkt.clouddn.com/RabbitMQ/RabbitMQ%E6%B6%88%E6%81%AF%E5%8F%91%E9%80%81%E7%AB%AF.png" alt=""></p>
+<ol start="3">
+<li>目前的消息队列中暂存了100条消息,这些消息尚为被消费👇</li>
+</ol>
+<p><img src="http://r7lh60uut.hb-bkt.clouddn.com/RabbitMQ/RabbitMQ%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A22.png" alt=""></p>
+<ol start="4">
+<li>开启已经监听指定消息队列的消息接收端, 消费队列中的消息👇</li>
+</ol>
+<p><img src="http://r7lh60uut.hb-bkt.clouddn.com/RabbitMQ/RabbitMQ%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E7%AB%AF.png" alt=""></p>
+<ol start="5">
+<li>消息推送到消息队列暂存–&gt;开启配置队列监听的消息消费端–&gt;消费消息队列中的消息 已完成, 消息队列已被清空👇</li>
+</ol>
+<p><img src="http://r7lh60uut.hb-bkt.clouddn.com/RabbitMQ/RabbitMQ%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A23.png" alt=""></p>
 
                 
             </div>
@@ -663,7 +725,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://visitor23.github.io.git/2022/02/27/jdbc-mysql-url/">https://visitor23.github.io.git/2022/02/27/jdbc-mysql-url/</a>
+                    <a href="https://visitor23.github.io.git/2022/02/27/rabbitmq-quickstart/">https://visitor23.github.io.git/2022/02/27/rabbitmq-quickstart/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -705,16 +767,12 @@
                                     <span class="chip bg-color">后端</span>
                                 </a>
                             
-                                <a href="/tags/JDBC/">
-                                    <span class="chip bg-color">JDBC</span>
+                                <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">
+                                    <span class="chip bg-color">消息队列</span>
                                 </a>
                             
-                                <a href="/tags/MySql/">
-                                    <span class="chip bg-color">MySql</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                                    <span class="chip bg-color">数据库</span>
+                                <a href="/tags/RabbitMQ/">
+                                    <span class="chip bg-color">RabbitMQ</span>
                                 </a>
                             
                         </div>
@@ -758,9 +816,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/02/27/rabbitmq-quickstart/">
                     <div class="card-image">
@@ -777,9 +836,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -792,6 +851,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -818,23 +878,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/24/redis-gong-ju/">
+                <a href="/2022/02/27/jdbc-mysql-url/">
                     <div class="card-image">
                         
-                        <img src="http://r7lh60uut.hb-bkt.clouddn.com/Redis.jpg" class="responsive-img" alt="Redis工具">
                         
-                        <span class="card-title">Redis工具</span>
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Util">
+                        
+                        <span class="card-title">Util</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Redis常用配置以及工具类
+                            常用工具代码
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-27
                             </span>
                         <span class="publish-author">
                             
@@ -855,8 +916,16 @@
                         <span class="chip bg-color">后端</span>
                     </a>
                     
-                    <a href="/tags/Redis/">
-                        <span class="chip bg-color">Redis</span>
+                    <a href="/tags/JDBC/">
+                        <span class="chip bg-color">JDBC</span>
+                    </a>
+                    
+                    <a href="/tags/MySql/">
+                        <span class="chip bg-color">MySql</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
                     </a>
                     
                 </div>
