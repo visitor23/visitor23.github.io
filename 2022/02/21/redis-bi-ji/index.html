@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="MySql分库分表, 丁兆龙的博客">
+    <meta name="keywords" content="Redis笔记, 丁兆龙的博客">
     <meta name="description" content="丁兆龙的博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>MySql分库分表 | 丁兆龙的博客</title>
+    <title>Redis笔记 | 丁兆龙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -322,12 +322,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://r7lh60uut.hb-bkt.clouddn.com/MySql/MySql-logo.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">MySql分库分表</h1>
+                    <h1 class="description center-align post-title">Redis笔记</h1>
                 </div>
             </div>
         </div>
@@ -447,16 +447,8 @@
                                 <span class="chip bg-color">后端</span>
                             </a>
                         
-                            <a href="/tags/MySql/">
-                                <span class="chip bg-color">MySql</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                                <span class="chip bg-color">数据库</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8/">
-                                <span class="chip bg-color">分库分表</span>
+                            <a href="/tags/Redis/">
+                                <span class="chip bg-color">Redis</span>
                             </a>
                         
                     </div>
@@ -471,28 +463,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-07
+                    2022-02-21
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-07
+                    2022-04-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    2.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    7 分
                 </div>
                 
 
@@ -515,101 +507,111 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="什么是分库分表"><a class="header-anchor" href="#什么是分库分表"></a>什么是分库分表</h2>
+                <h2 id="我的Redis笔记"><a class="header-anchor" href="#我的Redis笔记"></a>我的Redis笔记</h2>
+<h3 id="什么是Redis"><a class="header-anchor" href="#什么是Redis"></a>什么是Redis</h3>
+<ul>
+<li>
+<p><strong>Redis(Remote Dictionary Server)是一个使用C语言编写的, 开源的(BSD许可), 高性能, 非关系型(NoSql)的键值对数据库.</strong></p>
+</li>
+<li>
+<p>Redis 可以存储键和五种不同类型的值之间的映射. 键的类型只能为字符串,  值支持五种数据类型: 字符串, 列表,集合,散列表 和 有序集合.</p>
+</li>
+<li>
+<p>与传统数据库不同的是, Redis 的数据是存在内存中的, 读写速度非常快, 被广泛应用于缓存方向, 每秒可以处理超过 10万次读写操作.</p>
+</li>
+<li>
+<p>Redis 也经常用来做分布式锁. 除此之外, Redis 支持事务, 持久化, LUA脚本, LRU驱动事件, 多种集群方案.</p>
+</li>
+</ul>
+<h3 id="Redis的优缺点"><a class="header-anchor" href="#Redis的优缺点"></a>Redis的优缺点</h3>
+<ul>
+<li>优点:
+<ul>
+<li><strong>读写性能优异</strong>.  Redis能读的速度是110000次/s, 写的速度是81000次/s.</li>
+<li><strong>支持数据持久化</strong>. 支持AOF和RDB两种持久化方式.</li>
+<li><strong>支持事务</strong>. Redis的所有操作都是原子性的, 同时Redis还支持对几个操作合并后的原子性执行</li>
+<li><strong>数据结构丰富</strong>, 除了支持string类型的value外还支持hash, set, zset, list等数据结构</li>
+<li><strong>支持主从复制</strong>, 主机会自动将数据同步到从机, 可以进行读写分离</li>
+</ul>
+</li>
+<li>缺点:
+<ul>
+<li><strong>数据库容量受到物理内存的限制, 不能用作海量数据的高性能读写.</strong> 因此Redis适合的场景主要局限在较小数据量的高性能操作和运算上.</li>
+<li><strong>Redis 不具备自动容错和恢复功能</strong>. 主机从机的宕机都会导致前端部分读写请求失败, 需要等待机器重启或者手动切换前端的IP才能恢复.</li>
+<li><strong>主机宕机, 宕机前有部分数据未能及时同步到从机, 切换IP后还会引入数据不一致的问题, 降低了系统的可用性</strong></li>
+<li><strong>Redis 较难支持在线扩容</strong>. 在集群容量达到上限时在线扩容会变得很复杂. 为避免这一问题，运维人员在系统上线时必须确保有足够的空间, 对资源造成了很大的浪费.</li>
+</ul>
+</li>
+</ul>
+<h3 id="为什么要用Redis-为什么要用缓存"><a class="header-anchor" href="#为什么要用Redis-为什么要用缓存"></a>为什么要用Redis / 为什么要用缓存</h3>
 <blockquote>
-<p>其实 <code>分库</code> 和 <code>分表</code> 是两个概念, 只不过通常分库与分表的操作会同时进行, 所以习惯性的将它们合在一起叫做分库分表.</p>
+<p>主要从 <code>高性能</code> 和 <code>高并发</code> 这两点来看待此问题</p>
 </blockquote>
-<p>**分库分表是一种数据库优化的方式. **</p>
-<p><strong>为了解决由于库、表数据量过大，而导致数据库性能持续下降的问题。按照一定的规则，将原本数据量大的数据库拆分成多个单独的数据库，将原本数据量大的表拆分成若干个数据表，使得单一的库、表性能达到最优的效果（响应速度快），以此提升整体数据库性能。</strong></p>
-<h2 id="为什么要分库分表"><a class="header-anchor" href="#为什么要分库分表"></a>为什么要分库分表</h2>
-<blockquote>
-<p>要根据业务类型，和业务容量的评估，来选择和判断是否使用分库分表。</p>
-</blockquote>
-<blockquote>
-<p><strong>数据库性能瓶颈</strong></p>
-</blockquote>
+<h4 id="高性能"><a class="header-anchor" href="#高性能"></a>高性能</h4>
+<p>假如用户第一次访问数据库中的某些数据, 这个过程会比较慢, 因为是从硬盘上读取的.</p>
+<p>将该用户访问的数据存在数缓存中, 这样下一次再访问这些数据的时候就可以直接从缓存中获取了.</p>
+<p>操作缓存就是直接操作内存,<strong>速度非常快</strong>. 如果数据库中的对应数据改变的之后. 同步改变缓存中相应的数据即可.</p>
+<p><img src="http://r7lh60uut.hb-bkt.clouddn.com/Redis%E7%BC%93%E5%AD%98.png" alt=""></p>
+<h4 id="高并发"><a class="header-anchor" href="#高并发"></a>高并发</h4>
+<p>直接操作缓存能够承受的请求是远远大于直接访问数据库的, 所以我们可以考虑把数据库中的部分数据转移到缓存中去, 这样用户的一部分请求会直接到缓存这里而不用经过数据库.</p>
+<p><img src="http://r7lh60uut.hb-bkt.clouddn.com/Redis%E9%AB%98%E5%B9%B6%E5%8F%91.png" alt=""></p>
+<h3 id="为什么要用-Redis-而不用-map-guava-做缓存"><a class="header-anchor" href="#为什么要用-Redis-而不用-map-guava-做缓存"></a>为什么要用 Redis 而不用 map/guava 做缓存?</h3>
+<p>缓存分为本地缓存和分布式缓存. 以 Java 为例, 使用自带的 map 或者 guava 实现的是本地缓存, 最主要的特点是轻量以及快速, 生命周期随着 jvm 的销毁而结束.</p>
+<p>并且在多实例的情况下, 每个实例都需要各自保存一份缓存, 缓存不具有一致性.</p>
+<p>使用 redis 或 memcached 之类的称为分布式缓存, 在多实例的情况下, 各实例共用一份缓存数据, 缓存具有一致性. 缺点是需要保持 redis 或 memcached服务的高可用, 整个程序架构上较为复杂.</p>
+<h3 id="Redis为什么这么快"><a class="header-anchor" href="#Redis为什么这么快"></a>Redis为什么这么快</h3>
 <ol>
-<li>大量请求阻塞, 无法获取连接. 高并发时连接数不够用.</li>
-<li>SQL操作变慢, 数据库处理数据的效率出了问题.</li>
-<li>存储出现问题, 单机存储的数据量太大.</li>
-</ol>
-<h2 id="如何分库分表"><a class="header-anchor" href="#如何分库分表"></a>如何分库分表</h2>
-<p><strong>分库分表的核心理念就是对数据进行切分（<code>Sharding</code>），以及切分后如何对数据的快速定位与查询结果整合。</strong></p>
-<p>而分库与分表都可以从：<font color="red">垂直</font>(纵向) 和 <font color="red">水平</font>(横向) 两种纬度进行切分。</p>
-<h3 id="垂直切分"><a class="header-anchor" href="#垂直切分"></a>垂直切分</h3>
-<ol>
 <li>
-<p>分库</p>
-<p>垂直分库容易理解，核心理念就四个字：专库专用。</p>
-<p>在一定程度上，垂直切分似乎提升了一些数据库性能，可实际上并没有解决由于单表数据量过大导致的性能问题，需要配合水平切分方式来解决。</p>
+<p>完全基于内存, 绝大部分请求是纯粹的内存操作, 非常快速. 数据存在内存中, 类似于 HashMap, HashMap 的优势就是查找和操作的时间复杂度都是O(1)</p>
 </li>
 <li>
-<p>分表</p>
-<p>垂直分表是基于数据表的列(字段)为依据切分的, 是一种大表拆小表的模式。</p>
-<p>例如：一张订单表，将订单金额、订单编号等访问频繁的字段，单独拆成一张表，把 <code>blob</code> 类型这样的大字段或访问不频繁的字段，拆分出来创建一个单独的扩展表 ，这样每张表只存储原表的一部分字段，再将拆分出来的表分散到不同的库中。</p>
+<p>数据结构简单, 对数据操作也简单, Redis 中的数据结构是专门进行设计的</p>
+</li>
+<li>
+<p>采用单线程, 避免了不必要的上下文切换和竞争条件, 也不存在多进程或者多线程导致的切换而消耗 CPU, 不用去考虑各种锁的问题, 不存在加锁释放锁操作, 没有因为可能出现死锁而导致的性能消耗</p>
+</li>
+<li>
+<p>使用多路 I/O 复用模型, 非阻塞 IO</p>
+</li>
+<li>
+<p>使用底层模型不同, 它们之间底层实现方式以及与客户端之间通信的应用协议不一样, Redis 直接自己构建了 VM 机制, 因为一般的系统调用系统函数的话, 会浪费一定的时间去移动和请求</p>
 </li>
 </ol>
+<h3 id="数据类型"><a class="header-anchor" href="#数据类型"></a>数据类型</h3>
+<h4 id="Redis的数据类型"><a class="header-anchor" href="#Redis的数据类型"></a>Redis的数据类型</h4>
+<p>Redis主要有5种数据类型, 包括String, List, Set, Zset, Hash. 满足大部分的使用要求</p>
+<p><img src="http://r7lh60uut.hb-bkt.clouddn.com/Redis%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.png" alt=""></p>
+<h4 id="Redis的应用场景"><a class="header-anchor" href="#Redis的应用场景"></a>Redis的应用场景</h4>
+<h5 id="总结一"><a class="header-anchor" href="#总结一"></a>总结一</h5>
+<p><strong>计数器</strong></p>
+<p>可以对 String 进行自增自减运算, 从而实现计数器功能. Redis 这种内存型数据库的读写性能非常高, 很适合存储频繁读写的计数量.</p>
+<p><strong>缓存</strong></p>
+<p>将热点数据放到内存中, 设置内存的最大使用量以及淘汰策略来保证缓存的命中率.</p>
+<p><strong>会话缓存</strong></p>
+<p>可以使用 Redis 来统一存储多台应用服务器的会话信息. 当应用服务器不再存储用户的会话信息, 也就不再具有状态, 一个用户可以请求任意一个应用服务器, 从而更容易实现高可用性以及可伸缩性.</p>
+<p><strong>全页缓存（FPC）</strong></p>
+<p>除基本的会话token之外, Redis还提供很简便的FPC平台. 以Magento为例, Magento提供一个插件来使用Redis作为全页缓存后端. 此外, 对WordPress的用户来说, Pantheon有一个非常好的插件 wp-redis, 这个插件能帮助你以最快速度加载你曾浏览过的页面.</p>
+<p><strong>查找表</strong></p>
+<p>例如 DNS 记录就很适合使用 Redis 进行存储. 查找表和缓存类似, 也是利用了 Redis 快速的查找特性. 但是查找表的内容不能失效, 而缓存的内容可以失效, 因为缓存不作为可靠的数据来源.</p>
+<p><strong>消息队列(发布/订阅功能)</strong></p>
+<p>List 是一个双向链表, 可以通过 lpush 和 rpop 写入和读取消息. 不过最好使用 Kafka, RabbitMQ 等消息中间件</p>
+<p><strong>分布式锁实现</strong></p>
+<p>在分布式场景下, 无法使用单机环境下的锁来对多个节点上的进程进行同步. 可以使用 Redis 自带的 SETNX 命令实现分布式锁, 除此之外, 还可以使用官方提供的 RedLock 分布式锁实现.</p>
+<p><strong>其它</strong></p>
+<p>Set 可以实现交集, 并集等操作, 从而实现共同好友等功能. ZSet 可以实现有序性操作, 从而实现排行榜等功能.</p>
+<h5 id="总结二"><a class="header-anchor" href="#总结二"></a>总结二</h5>
+<p>Redis相比其他缓存, 有一个非常大的优势, 就是支持多种数据类型.</p>
+<p>数据类型说明string字符串，最简单的k-v存储hashhash格式，value为field和value，适合ID-Detail这样的场景。list简单的list，顺序列表，支持首位或者末尾插入数据set无序list，查找速度快，适合交集、并集、差集处理sorted set有序的set</p>
+<p>其实，通过上面的数据类型的特性，基本就能想到合适的应用场景了。</p>
+<p>string——适合最简单的k-v存储，类似于memcached的存储结构，短信验证码，配置信息等，就用这种类型来存储。</p>
+<p>hash——一般key为ID或者唯一标识，value对应的就是详情了。如商品详情，个人信息详情，新闻详情等。</p>
+<p>list——因为list是有序的，比较适合存储一些有序且数据相对固定的数据。如省市区表、字典表等。因为list是有序的，适合根据写入的时间来排序，如：最新的***，消息队列等。</p>
+<p>set——可以简单的理解为ID-List的模式，如微博中一个人有哪些好友，set最牛的地方在于，可以对两个set提供交集、并集、差集操作。例如：查找两个人共同的好友等。</p>
+<p>Sorted Set——是set的增强版本，增加了一个score参数，自动会根据score的值进行排序。比较适合类似于top 10等不根据插入的时间来排序的数据。</p>
+<p>如上所述，虽然Redis不像关系数据库那么复杂的数据结构，但是，也能适合很多场景，比一般的缓存数据结构要多。了解每种数据结构适合的业务场景，不仅有利于提升开发效率，也能有效利用Redis的性能。</p>
 <blockquote>
-<p>垂直切分的优点</p>
+<p>原文链接: <a target="_blank" rel="noopener" href="https://www.cnblogs.com/qinlulu/p/12855443.html">点此</a></p>
 </blockquote>
-<ul>
-<li>解决业务系统层面的耦合，业务清晰</li>
-<li>与微服务的治理类似，也能对不同业务的数据进行分级管理、维护、监控、扩展等</li>
-<li>高并发场景下，垂直切分一定程度的提升IO、数据库连接数、单机硬件资源的瓶颈</li>
-</ul>
-<blockquote>
-<p>垂直切分的缺点</p>
-</blockquote>
-<ul>
-<li>部分表无法join，只能通过接口聚合方式解决，提升了开发的复杂度</li>
-<li>分布式事务处理复杂</li>
-<li>依然存在单表数据量过大的问题（需要水平切分）</li>
-</ul>
-<h3 id="水平切分"><a class="header-anchor" href="#水平切分"></a>水平切分</h3>
-<ol>
-<li>
-<p>分库</p>
-<p>水平分库是把同一个表按一定规则拆分到不同的数据库中，每个库可以位于不同的服务器上，以此实现水平扩展，是一种常见的提升数据库性能的方式。</p>
-<p>这种方案往往能解决单库存储量及性能瓶颈问题，但由于同一个表被分配在不同的数据库中，数据的访问需要额外的路由工作，因此系统的复杂度也被提升了。</p>
-</li>
-<li>
-<p>分表</p>
-<p>水平分表是在同一个数据库内，把一张大数据量的表按一定规则，切分成多个结构完全相同表，而每个表只存原表的一部分数据。</p>
-<p>例如：一张 <code>order</code> 订单表有 900万数据，经过水平拆分出来三个表，<code>order_1</code>、<code>order_2</code>、<code>order_3</code>，每张表存有数据 300万，以此类推。</p>
-</li>
-</ol>
-<p><strong>水平分表尽管拆分了表，但子表都还是在同一个数据库实例中，只是解决了单一表数据量过大的问题，并没有将拆分后的表分散到不同的机器上，还在竞争同一个物理机的CPU、内存、网络IO等。</strong></p>
-<p><strong>要想进一步提升性能，就需要将拆分后的表分散到不同的数据库中，达到分布式的效果。</strong></p>
-<blockquote>
-<p>水平切分的优点</p>
-</blockquote>
-<ul>
-<li>
-<p>解决高并发时单库数据量过大的问题，提升系统稳定性和负载能力。</p>
-</li>
-<li>
-<p>业务系统改造的工作量不是很大。</p>
-</li>
-</ul>
-<blockquote>
-<p>水平切分的缺点</p>
-</blockquote>
-<ul>
-<li>跨分片的事务一致性难以保证。</li>
-<li>跨库的join关联查询性能较差。</li>
-<li>扩容的难度和维护量较大。</li>
-</ul>
-<h2 id="分库分表的问题"><a class="header-anchor" href="#分库分表的问题"></a>分库分表的问题</h2>
-<h3 id="分布式事务"><a class="header-anchor" href="#分布式事务"></a>分布式事务</h3>
-<p>由于表分布在不同库中，不可避免会带来跨库事务问题。一般可使用 "<code>三阶段提交</code> "和 “<code>两阶段提交</code>” 处理，但是这种方式性能较差，代码开发量也比较大。通常做法是做到最终一致性的方案，如果不苛求系统的实时一致性，只要在允许的时间段内达到最终一致性即可，采用事务补偿的方式。</p>
-<p>可以应用分布式事务框架来做分布式事务的管理。</p>
-<h3 id="分页、排序、跨库联合查询"><a class="header-anchor" href="#分页、排序、跨库联合查询"></a>分页、排序、跨库联合查询</h3>
-<p>在分库分表后，这些使用频率非常高的操作成为难题。</p>
-<p>将分散在不同库中表的数据查询出来，再将所有结果进行汇总整理后提供给用户。</p>
-<h3 id="分布式主键"><a class="header-anchor" href="#分布式主键"></a>分布式主键</h3>
-<p>分库分表后已经无法依靠单个数据库实例上的自增主键来实现不同数据库之间的全局唯一主键，此时一个能够生成全局唯一ID的系统是非常必要的，这个全局唯一ID就叫 <code>分布式ID</code>。</p>
-<h3 id="读写分离"><a class="header-anchor" href="#读写分离"></a>读写分离</h3>
-<p>大部分主流的关系型数据库都提供了主从架构的高可用方案，而我们需要实现 <code>读写分离</code> + <code>分库分表</code>，读库与写库都要做分库分表处理.</p>
 
                 
             </div>
@@ -636,7 +638,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://visitor23.github.io.git/2022/03/07/mysql-fen-ku-fen-biao/">https://visitor23.github.io.git/2022/03/07/mysql-fen-ku-fen-biao/</a>
+                    <a href="https://visitor23.github.io.git/2022/02/21/redis-bi-ji/">https://visitor23.github.io.git/2022/02/21/redis-bi-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -678,16 +680,8 @@
                                     <span class="chip bg-color">后端</span>
                                 </a>
                             
-                                <a href="/tags/MySql/">
-                                    <span class="chip bg-color">MySql</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                                    <span class="chip bg-color">数据库</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8/">
-                                    <span class="chip bg-color">分库分表</span>
+                                <a href="/tags/Redis/">
+                                    <span class="chip bg-color">Redis</span>
                                 </a>
                             
                         </div>
@@ -735,87 +729,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/03/07/shu-ju-ku-suo-yin/">
+                <a href="/2022/02/24/redis-gong-ju/">
                     <div class="card-image">
                         
-                        <img src="http://r7lh60uut.hb-bkt.clouddn.com/MySql/MySql-logo.png" class="responsive-img" alt="数据库索引">
+                        <img src="http://r7lh60uut.hb-bkt.clouddn.com/Redis.jpg" class="responsive-img" alt="Redis工具">
                         
-                        <span class="card-title">数据库索引</span>
+                        <span class="card-title">Redis工具</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数据库索引
+                            Redis常用配置以及工具类
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-07
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-24
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            丁兆龙
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%90%8E%E7%AB%AF/">
-                        <span class="chip bg-color">后端</span>
-                    </a>
-                    
-                    <a href="/tags/MySql/">
-                        <span class="chip bg-color">MySql</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">数据库</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B4%A2%E5%BC%95/">
-                        <span class="chip bg-color">数据库索引</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/03/01/dubbo-quickstart/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Dubbo-quickStart">
-                        
-                        <span class="card-title">Dubbo-quickStart</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Dubbo快速开始示例
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-01
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/quickStart/" class="post-category">
-                                    quickStart
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    工具
                                 </a>
                             
                             
@@ -829,12 +766,57 @@
                         <span class="chip bg-color">后端</span>
                     </a>
                     
-                    <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">
-                        <span class="chip bg-color">分布式</span>
+                    <a href="/tags/Redis/">
+                        <span class="chip bg-color">Redis</span>
                     </a>
                     
-                    <a href="/tags/Dubbo/">
-                        <span class="chip bg-color">Dubbo</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/02/20/jquery-bi-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="JQuery笔记">
+                        
+                        <span class="card-title">JQuery笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            JQuery笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            丁兆龙
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/JQuery/">
+                        <span class="chip bg-color">JQuery</span>
                     </a>
                     
                 </div>
