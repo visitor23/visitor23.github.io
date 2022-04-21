@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 丁兆龙的博客">
+    <meta name="keywords" content="笔记, 丁兆龙的博客">
     <meta name="description" content="丁兆龙的博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 丁兆龙的博客</title>
+    <title>笔记 | 丁兆龙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -322,12 +322,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">笔记</h1>
                 </div>
             </div>
         </div>
@@ -580,7 +580,7 @@
 </ol>
 <h4 id=""><a class="header-anchor" href="#"></a></h4>
 <p><img src="https://2022-04-02-1309634420.cos.ap-beijing.myqcloud.com/Java%2FJava-ThreadStatusSwitch.png" alt=""></p>
-<p><font color="red">**join()**实际上是Thread类的方法</font></p>
+<p><font color="red">join()实际上是Thread类的方法</font></p>
 <h4 id="线程的创建方式"><a class="header-anchor" href="#线程的创建方式"></a>线程的创建方式</h4>
 <ol>
 <li>继承<code>Thread</code>类, 覆写run()方法</li>
@@ -595,51 +595,48 @@
 <h4 id="线程池"><a class="header-anchor" href="#线程池"></a>线程池</h4>
 <h5 id="创建线程池"><a class="header-anchor" href="#创建线程池"></a>创建线程池</h5>
 <ul>
-<li>
-<p>线程池实现类<code>ThreadPoolExecutor</code>是 <code>Executor</code> 框架最核心的类</p>
-<pre><code>  /**
-   * 用给定的初始参数创建一个新的ThreadPoolExecutor。
-   */
-  public ThreadPoolExecutor(
-          // 线程池的核心线程数量.当线程池被创建后,无论是否有任务,核心线程会始终保持存活
-          int corePoolSize,
-          // 线程池的最大线程数.当任务队列已满(当前运行的线程数 = 核心线程数)时,当前可运行的线程数即变为最大线程数
-          int maximumPoolSize,
-          // 当线程数大于核心线程数时,多余的空闲线程存活的最长时间
-          long keepAliveTime,
-          // 上一项的时间单位
-          TimeUnit unit,
-          // 任务队列,用来储存等待执行任务的队列.
-          // 当有新任务加入,但当前运行的线程数达到核心线程数时,新任务就会添加进任务队列
-          BlockingQueue&lt;Runnable&gt; workQueue,
-          // 线程工厂,用来创建线程,一般默认即可
-          ThreadFactory threadFactory,
-          // 拒绝策略,当提交的任务过多而不能及时处理时,我们可以定制策略来处理任务
-          // 当有新任务加入,但当前运行的线程数等于最大线程数,且任务队列也已满时,
-          // 就根据指定的拒绝策略对新任务进行处理
-          RejectedExecutionHandler handler
-  ) {
-
-      // 参数合法性校验                   
-      if (corePoolSize &lt; 0 ||
-              maximumPoolSize &lt;= 0 ||
-              maximumPoolSize &lt; corePoolSize ||
-              keepAliveTime &lt; 0)
-          throw new IllegalArgumentException();
-      if (workQueue == null || threadFactory == null || handler == null)
-          throw new NullPointerException();
-
-      // 属性赋值
-      this.corePoolSize = corePoolSize;
-      this.maximumPoolSize = maximumPoolSize;
-      this.workQueue = workQueue;
-      this.keepAliveTime = unit.toNanos(keepAliveTime);
-      this.threadFactory = threadFactory;
-      this.handler = handler;
-  }
-</code></pre>
-</li>
+<li>线程池实现类<code>ThreadPoolExecutor</code>是 <code>Executor</code> 框架最核心的类</li>
 </ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+ * 用给定的初始参数创建一个新的ThreadPoolExecutor。
+ */</span>
+<span class="token keyword">public</span> <span class="token class-name">ThreadPoolExecutor</span><span class="token punctuation">(</span>
+        <span class="token comment">// 线程池的核心线程数量.当线程池被创建后,无论是否有任务,核心线程会始终保持存活</span>
+        <span class="token keyword">int</span> corePoolSize<span class="token punctuation">,</span>
+        <span class="token comment">// 线程池的最大线程数.当任务队列已满(当前运行的线程数 = 核心线程数)时,当前可运行的线程数即变为最大线程数</span>
+        <span class="token keyword">int</span> maximumPoolSize<span class="token punctuation">,</span>
+        <span class="token comment">// 当线程数大于核心线程数时,多余的空闲线程存活的最长时间</span>
+        <span class="token keyword">long</span> keepAliveTime<span class="token punctuation">,</span>
+        <span class="token comment">// 上一项的时间单位</span>
+        <span class="token class-name">TimeUnit</span> unit<span class="token punctuation">,</span>
+        <span class="token comment">// 任务队列,用来储存等待执行任务的队列.</span>
+        <span class="token comment">// 当有新任务加入,但当前运行的线程数达到核心线程数时,新任务就会添加进任务队列</span>
+        <span class="token class-name">BlockingQueue</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Runnable</span><span class="token punctuation">&gt;</span></span> workQueue<span class="token punctuation">,</span>
+        <span class="token comment">// 线程工厂,用来创建线程,一般默认即可</span>
+        <span class="token class-name">ThreadFactory</span> threadFactory<span class="token punctuation">,</span>
+        <span class="token comment">// 拒绝策略,当提交的任务过多而不能及时处理时,我们可以定制策略来处理任务</span>
+        <span class="token comment">// 当有新任务加入,但当前运行的线程数等于最大线程数,且任务队列也已满时,</span>
+        <span class="token comment">// 就根据指定的拒绝策略对新任务进行处理</span>
+        <span class="token class-name">RejectedExecutionHandler</span> handler
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// 参数合法性校验                   </span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>corePoolSize <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span>
+            maximumPoolSize <span class="token operator">&lt;=</span> <span class="token number">0</span> <span class="token operator">||</span>
+            maximumPoolSize <span class="token operator">&lt;</span> corePoolSize <span class="token operator">||</span>
+            keepAliveTime <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>workQueue <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> threadFactory <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> handler <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">NullPointerException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 属性赋值</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>corePoolSize <span class="token operator">=</span> corePoolSize<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>maximumPoolSize <span class="token operator">=</span> maximumPoolSize<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>workQueue <span class="token operator">=</span> workQueue<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>keepAliveTime <span class="token operator">=</span> unit<span class="token punctuation">.</span><span class="token function">toNanos</span><span class="token punctuation">(</span>keepAliveTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>threadFactory <span class="token operator">=</span> threadFactory<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>handler <span class="token operator">=</span> handler<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>如何创建合理大小的线程池👇</p>
 </blockquote>
@@ -823,9 +820,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="笔记">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
