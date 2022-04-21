@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Dubbo-quickStart, 丁兆龙的博客">
+    <meta name="keywords" content="Hello World, 丁兆龙的博客">
     <meta name="description" content="丁兆龙的博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Dubbo-quickStart | 丁兆龙的博客</title>
+    <title>Hello World | 丁兆龙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -322,12 +322,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Dubbo-quickStart</h1>
+                    <h1 class="description center-align post-title">Hello World</h1>
                 </div>
             </div>
         </div>
@@ -443,31 +443,14 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%90%8E%E7%AB%AF/">
-                                <span class="chip bg-color">后端</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">
-                                <span class="chip bg-color">分布式</span>
-                            </a>
-                        
-                            <a href="/tags/Dubbo/">
-                                <span class="chip bg-color">Dubbo</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/quickStart/" class="post-category">
-                                quickStart
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -476,28 +459,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-01
+                    2022-04-21
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-07
+                    2022-04-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    678
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    9 分
                 </div>
                 
 
@@ -520,187 +503,208 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Maven依赖"><a class="header-anchor" href="#Maven依赖"></a>Maven依赖</h2>
+                <h2 id="Java"><a class="header-anchor" href="#Java"></a>Java</h2>
+<h3 id="集合"><a class="header-anchor" href="#集合"></a>集合</h3>
+<h4 id="Java-集合概览"><a class="header-anchor" href="#Java-集合概览"></a>Java 集合概览</h4>
+<p>Java 集合(容器)，主要是由两大接口派生而来：<code>Collection</code>接口存放单一元素； <code>Map</code> 接口存放键值对。</p>
+<p><img src="https://2022-04-02-1309634420.cos.ap-beijing.myqcloud.com/Java%2Fjava-collection-hierarchy.png" alt=""></p>
+<h4 id="List-Set-Queue-Map-的区别"><a class="header-anchor" href="#List-Set-Queue-Map-的区别"></a>List, Set, Queue, Map 的区别</h4>
 <blockquote>
-<p>本例中公共模块的依赖👇</p>
+<p>一般地👇</p>
 </blockquote>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.projectlombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>lombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><code>List</code>: 元素有序、可重复</li>
+<li><code>Set</code>: 元素无序、不可重复</li>
+<li><code>Queue</code>: 元素有序、可重复。按特定排队规则确定顺序</li>
+<li><code>Map</code>: 使用键值对存储，key 无序且不可重复; value 无序但可重复</li>
+</ul>
+<h4 id="集合功能接口"><a class="header-anchor" href="#集合功能接口"></a>集合功能接口</h4>
+<ul>
+<li>Iterable: 迭代器接口,实现类支持获取迭代器, 迭代集合元素</li>
+<li>Collection: 单列集合的最父级接口</li>
+<li>Map: 双列集合的最父级接口</li>
+<li>SortedMap: 实现类可对key进行排序</li>
+<li>List: 最常用的单列集合接口, 底层为Object[], 集合元素有序且可重复</li>
+<li>Set: 实现此接口的集合, 元素一定不可重复, 但或可支持元素有序</li>
+<li>SortedSet: 元素不可重复, 但可指定比较器比较集合元素, 实现元素排序</li>
+<li>Queue: 队列结构的单列集合, 实现类有 <font color="red">单向出/入队列&nbsp;</font>的功能</li>
+<li>Deque: 双端队列结构的单列集合, 实现类有 <font color="red">双向出/入队列</font> 的功能</li>
+<li>RandomAccess: 标识性接口, 实现了此接口的集合类支持快速随机元素访问</li>
+</ul>
+<h4 id="集合分类"><a class="header-anchor" href="#集合分类"></a>集合分类</h4>
+<ul>
+<li>纯数组结构的集合, 元素有序,且支持快速随机访问, 例如<code>ArrayList</code>,<code>Vector</code></li>
+<li>链表结构的集合, 元素有序, 增删效率较高, 例如<code>LinkedList</code>, <code>LinkedHashSet</code></li>
+<li>树型结构的集合, 元素根据指定的比较器进行排序, 例如<code>TreeSet</code>, <code>TreeMap</code>(key排序)</li>
+<li>Hash类集合, 元素不可重复, 例如<code>HashSet</code>, <code>LInkedHashSet</code>, <code>HashMap</code>(key不可重复)</li>
+</ul>
+<h4 id="线程安全的集合"><a class="header-anchor" href="#线程安全的集合"></a>线程安全的集合</h4>
+<p>JDK 提供的线程安全的集合类大部分都在 <code>java.util.concurrent</code> 包中</p>
+<ul>
+<li><strong><code>ConcurrentHashMap</code></strong> : 线程安全的 <code>HashMap</code></li>
+<li><strong><code>CopyOnWriteArrayList</code></strong> : 线程安全的 <code>List</code>，在读多写少的场合性能非常好，远远好于 <code>Vector</code></li>
+<li><strong><code>CopyOnWriteArraySet</code></strong>: 线程安全的<code>Set</code></li>
+<li><strong><code>ConcurrentLinkedQueue</code></strong> : 高效的并发队列，使用链表实现。可以看做一个线程安全的 <code>LinkedList</code>，这是一个非阻塞队列</li>
+<li><strong><code>BlockingQueue</code></strong> : 这是一个接口，JDK 内部通过链表、数组等方式实现了这个接口。表示阻塞队列，适合用于作为数据共享的通道</li>
+<li><strong><code>ConcurrentSkipListMap</code></strong> : 跳表的实现。这是一个 Map，使用跳表的数据结构进行快速查找</li>
+</ul>
+<h4 id="HashSet去重原理"><a class="header-anchor" href="#HashSet去重原理"></a>HashSet去重原理</h4>
+<ol>
+<li>HashSet通过元素的hashCode()和equals()方法校验是否已有重复元素</li>
+<li>当元素添加进集合时, 先判断集合中是否存在相应的hash值, 如果不存在则允许入集合</li>
+<li>如果待添加元素的hash值已存在, 则通过元素的equals()方法与已有元素的比较, 全部为false则允许入集合</li>
+<li>如果hash值与equals()均未通过, 则拒绝入集合</li>
+</ol>
+<ul>
+<li>结论: <strong>集合元素去重(检查元素是否重复), 必须正确重写hashCode()与equals()方法</strong></li>
+<li>hashCode()方法是为了提高检查重复的效率(如果hash值尚未在集合中存在, 则元素可直接入集合)</li>
+<li>equals()方法是为了进行二次判断, hashCode()方法生成的hash值有碰撞风险</li>
+</ul>
+<h3 id="多线程"><a class="header-anchor" href="#多线程"></a>多线程</h3>
+<h4 id="线程的生命周期与状态切换"><a class="header-anchor" href="#线程的生命周期与状态切换"></a>线程的生命周期与状态切换</h4>
 <blockquote>
-<p>Dubbo服务的提供者和调用者需要的依赖👇</p>
+<p>什么是多线程以及为什么要用多线程</p>
+<ol>
+<li>进程是一个程序的执行过程, 线程是相对进程来说的更轻量的执行单位, 每个进程都至少包含1个线程</li>
+<li>相比于进程, 线程之间切换的资源开销小, 而且可以提高对硬件资源的利用率</li>
+</ol>
 </blockquote>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml">
-<span class="token comment">&lt;!-- Apache官方提供的 Dubbo 和 SpringBoot 整合的起步依赖 --&gt;</span>
-<span class="token comment">&lt;!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo-spring-boot-starter --&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.apache.dubbo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>dubbo-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>3.0.5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
-
-<span class="token comment">&lt;!-- zookeeper客户端  引入此依赖curator-framework curator-recipes 都有 --&gt;</span>
-<span class="token comment">&lt;!-- https://mvnrepository.com/artifact/org.apache.curator/curator-x-discovery --&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.apache.curator<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>curator-x-discovery<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>5.2.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
-
-<span class="token comment">&lt;!-- 依赖于公共模块 这个自定义的模块提供了公共的接口,实体类等以供调用 --&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.dzl<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>dubbo-api<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>0.0.1-SNAPSHOT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="SpringBoot配置"><a class="header-anchor" href="#SpringBoot配置"></a>SpringBoot配置</h2>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">dubbo:
-  application:
-    # 配置应用名,服务提供者和调用者不能同名
-    name: dubbo-provider
-  registry:
-    # 连接zookeeper注册中心
-    address: zookeeper://127.0.0.1:2181
-  protocol:
-    name: dubbo
-    port: 20880
-server:
-  port: 8091<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="启动类"><a class="header-anchor" href="#启动类"></a>启动类</h2>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>dubbo<span class="token punctuation">.</span>config<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">EnableDubbo</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span></span><span class="token class-name">SpringApplication</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>autoconfigure<span class="token punctuation">.</span></span><span class="token class-name">SpringBootApplication</span><span class="token punctuation">;</span>
-
-<span class="token comment">/**
- * 启动类上需要加入@EnableDubbo注解,表示启用Dubbo
- */</span>
-<span class="token annotation punctuation">@EnableDubbo</span>
-<span class="token annotation punctuation">@SpringBootApplication</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DubboProviderApplication</span> <span class="token punctuation">{</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">DubboProviderApplication</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="代码"><a class="header-anchor" href="#代码"></a>代码</h2>
-<h3 id="公共模块👇"><a class="header-anchor" href="#公共模块👇"></a>公共模块👇</h3>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span></span><span class="token class-name">AllArgsConstructor</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span></span><span class="token class-name">Data</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span></span><span class="token class-name">NoArgsConstructor</span><span class="token punctuation">;</span>
-
-<span class="token comment">/**
- * 实体类
- */</span>
-<span class="token annotation punctuation">@Data</span>
-<span class="token annotation punctuation">@NoArgsConstructor</span>
-<span class="token annotation punctuation">@AllArgsConstructor</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
-
-    <span class="token keyword">private</span> <span class="token class-name">String</span> username<span class="token punctuation">;</span>
-
-    <span class="token keyword">private</span> <span class="token class-name">String</span> password<span class="token punctuation">;</span>
-
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
- * 接口
- */</span>
-<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IUserService</span> <span class="token punctuation">{</span>
-
-    <span class="token comment">/**
-     * 用户登录
-     *
-     * @param username 用户名
-     * @param password 密码
-     * @return 登陆结果
-     */</span>
-    <span class="token class-name">String</span> <span class="token function">login</span><span class="token punctuation">(</span><span class="token class-name">String</span> username<span class="token punctuation">,</span> <span class="token class-name">String</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="服务提供者👇"><a class="header-anchor" href="#服务提供者👇"></a>服务提供者👇</h3>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>dubbo<span class="token punctuation">.</span>config<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">DubboService</span><span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Arrays</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">List</span><span class="token punctuation">;</span>
-
-<span class="token comment">/**
- * 注解@DubboService标识一个服务提供者
- */</span>
-<span class="token annotation punctuation">@DubboService</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">IUserService</span> <span class="token punctuation">{</span>
-
-    <span class="token comment">/**
-     * 模拟数据库中的数据
-     */</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">&gt;</span></span> USERS <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>
-            <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">"tom"</span><span class="token punctuation">,</span> <span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-            <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">"jerry"</span><span class="token punctuation">,</span> <span class="token string">"123"</span><span class="token punctuation">)</span>
-    <span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token comment">/**
-     * 模拟查询数据库的逻辑
-     *
-     * @param username 用户名
-     * @param password 密码
-     * @return 结果
-     */</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">login</span><span class="token punctuation">(</span><span class="token class-name">String</span> username<span class="token punctuation">,</span> <span class="token class-name">String</span> password<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> USERS<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">anyMatch</span><span class="token punctuation">(</span>user <span class="token operator">-&gt;</span> user<span class="token punctuation">.</span><span class="token function">getUsername</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span>
-                <span class="token operator">&amp;&amp;</span> user<span class="token punctuation">.</span><span class="token function">getPassword</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">"登陆成功"</span> <span class="token operator">:</span> <span class="token string">"登陆失败"</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="服务消费者👇"><a class="header-anchor" href="#服务消费者👇"></a>服务消费者👇</h3>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span>extern<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span></span><span class="token class-name">Slf4j</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>dubbo<span class="token punctuation">.</span>config<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">DubboReference</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">GetMapping</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">RequestMapping</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">RequestParam</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">RestController</span><span class="token punctuation">;</span>
-
-
-<span class="token annotation punctuation">@Slf4j</span>
-<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/user"</span><span class="token punctuation">)</span>
-<span class="token annotation punctuation">@RestController</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserController</span> <span class="token punctuation">{</span>
-
-    <span class="token annotation punctuation">@DubboReference</span>
-    <span class="token keyword">private</span> <span class="token class-name">IUserService</span> userServiceImpl<span class="token punctuation">;</span>
-
-    <span class="token comment">/**
-     * 用户登录的接口
-     */</span>
-    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/login"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">login</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span> <span class="token class-name">String</span> username<span class="token punctuation">,</span> <span class="token annotation punctuation">@RequestParam</span> <span class="token class-name">String</span> password<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"用户登录接口请求参数: username:{}, password:{}"</span><span class="token punctuation">,</span> username<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token class-name">String</span> ret<span class="token punctuation">;</span>
-        <span class="token keyword">try</span> <span class="token punctuation">{</span>
-            ret <span class="token operator">=</span> userServiceImpl<span class="token punctuation">.</span><span class="token function">login</span><span class="token punctuation">(</span>username<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"内部异常: {}"</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            ret <span class="token operator">=</span> <span class="token string">"内部异常..."</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> ret<span class="token punctuation">;</span>
-
-    <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="启动测试"><a class="header-anchor" href="#启动测试"></a>启动测试</h2>
+<p><img src="https://2022-04-02-1309634420.cos.ap-beijing.myqcloud.com/Java%2FJava-ThreadLifeCycle.png" alt=""></p>
+<ol>
+<li>新建态(new), 线程被创建后的初始状态</li>
+<li>运行态(runnable), Java中将<code>就绪态</code>与<code>运行时态</code>统称为<font color="red"><strong>运行态</strong></font></li>
+<li>阻塞态(blocking), 线程等待锁释放时的状态</li>
+<li>等待态(waiting), 与阻塞态类似, 此时线程任务处于暂停, 但是可被唤醒</li>
+<li>超时等待态(time-waiting), 与等待态相比, 在指定的超时时间后会自动唤醒</li>
+<li>终止态(terminated), 线程任务结束</li>
+</ol>
+<h4 id=""><a class="header-anchor" href="#"></a></h4>
+<p><img src="https://2022-04-02-1309634420.cos.ap-beijing.myqcloud.com/Java%2FJava-ThreadStatusSwitch.png" alt=""></p>
+<p><font color="red">**join()**实际上是Thread类的方法</font></p>
+<h4 id="线程的创建方式"><a class="header-anchor" href="#线程的创建方式"></a>线程的创建方式</h4>
+<ol>
+<li>继承<code>Thread</code>类, 覆写run()方法</li>
+<li>实现<code>Runnable</code>接口, 覆写run()方法</li>
+<li>实现<code>Callable</code>接口, 覆写call()方法</li>
+<li><strong>通过线程池创建线程, 降低系统资源消耗, 提高线程的响应速度和可管理性</strong>(推荐)</li>
+</ol>
 <blockquote>
-<p>首先在本地启动ZooKeeper注册中心</p>
+<p>Q: 为什么要使用线程池来创建线程?</p>
+<p>A: 能减少在创建和销毁线程上的时间及系统资源开销. 避免系统创建大量线程造成内存耗尽或者’过度切换’的问题</p>
 </blockquote>
+<h4 id="线程池"><a class="header-anchor" href="#线程池"></a>线程池</h4>
+<h5 id="创建线程池"><a class="header-anchor" href="#创建线程池"></a>创建线程池</h5>
+<ul>
+<li>
+<p>线程池实现类<code>ThreadPoolExecutor</code>是 <code>Executor</code> 框架最核心的类</p>
+<pre><code>  /**
+   * 用给定的初始参数创建一个新的ThreadPoolExecutor。
+   */
+  public ThreadPoolExecutor(
+          // 线程池的核心线程数量.当线程池被创建后,无论是否有任务,核心线程会始终保持存活
+          int corePoolSize,
+          // 线程池的最大线程数.当任务队列已满(当前运行的线程数 = 核心线程数)时,当前可运行的线程数即变为最大线程数
+          int maximumPoolSize,
+          // 当线程数大于核心线程数时,多余的空闲线程存活的最长时间
+          long keepAliveTime,
+          // 上一项的时间单位
+          TimeUnit unit,
+          // 任务队列,用来储存等待执行任务的队列.
+          // 当有新任务加入,但当前运行的线程数达到核心线程数时,新任务就会添加进任务队列
+          BlockingQueue&lt;Runnable&gt; workQueue,
+          // 线程工厂,用来创建线程,一般默认即可
+          ThreadFactory threadFactory,
+          // 拒绝策略,当提交的任务过多而不能及时处理时,我们可以定制策略来处理任务
+          // 当有新任务加入,但当前运行的线程数等于最大线程数,且任务队列也已满时,
+          // 就根据指定的拒绝策略对新任务进行处理
+          RejectedExecutionHandler handler
+  ) {
+
+      // 参数合法性校验                   
+      if (corePoolSize &lt; 0 ||
+              maximumPoolSize &lt;= 0 ||
+              maximumPoolSize &lt; corePoolSize ||
+              keepAliveTime &lt; 0)
+          throw new IllegalArgumentException();
+      if (workQueue == null || threadFactory == null || handler == null)
+          throw new NullPointerException();
+
+      // 属性赋值
+      this.corePoolSize = corePoolSize;
+      this.maximumPoolSize = maximumPoolSize;
+      this.workQueue = workQueue;
+      this.keepAliveTime = unit.toNanos(keepAliveTime);
+      this.threadFactory = threadFactory;
+      this.handler = handler;
+  }
+</code></pre>
+</li>
+</ul>
 <blockquote>
-<p>浏览器访问 <a target="_blank" rel="noopener" href="http://localhost:8091/user/login?username=tom&amp;&amp;password=123">这里</a>   (<code>http://localhost:8091/user/login?username=tom&amp;&amp;password=123</code>)</p>
+<p>如何创建合理大小的线程池👇</p>
 </blockquote>
-<blockquote>
-<p>预期结果👇</p>
-</blockquote>
-<p><img src="http://r7lh60uut.hb-bkt.clouddn.com/Dubbo/Dubbo-demo-web.png" alt=""></p>
-<p><img src="http://r7lh60uut.hb-bkt.clouddn.com/Dubbo/Dubbo-demo-result.png" alt=""></p>
+<p>有一个简单并且适用面比较广的公式：</p>
+<ul>
+<li><strong>CPU 密集型任务(N+1)：</strong> 这种任务消耗的主要是 CPU 资源，可以将线程数设置为 N（CPU 核心数）+1，比 CPU 核心数多出来的一个线程是为了防止线程偶发的缺页中断，或者其它原因导致的任务暂停而带来的影响。一旦任务暂停，CPU 就会处于空闲状态，而在这种情况下多出来的一个线程就可以充分利用 CPU 的空闲时间。</li>
+<li><strong>I/O 密集型任务(2N)：</strong> 这种任务应用起来，系统会用大部分的时间来处理 I/O 交互，而线程在处理 I/O 的时间段内不会占用 CPU 来处理，这时就可以将 CPU 交出给其它线程使用。因此在 I/O 密集型任务的应用中，我们可以多配置一些线程，具体的计算方法是 2N。</li>
+</ul>
+<p><strong>如何判断是 CPU 密集任务还是 IO 密集任务？</strong></p>
+<p>CPU 密集型简单理解就是利用 CPU 计算能力的任务比如你在内存中对大量数据进行排序。但凡涉及到网络读取，文件读取这类都是 IO 密集型，这类任务的特点是 CPU 计算耗费时间相比于等待 IO 操作完成的时间来说很少，大部分时间都花在了等待 IO 操作完成上</p>
+<h5 id="线程池饱和策略"><a class="header-anchor" href="#线程池饱和策略"></a><strong>线程池饱和策略</strong></h5>
+<p><strong>如果有新任务要加入线程池, 但此时运行的线程数达到最大线程数, 且任务队列也已满, 则根据指定的拒绝策略来处理新任务</strong></p>
+<p><code>ThreadPoolTaskExecutor</code> 定义了以下拒绝策略</p>
+<ul>
+<li><strong><code>ThreadPoolExecutor.AbortPolicy</code></strong> ：拒绝新任务并抛出异常, <strong>默认</strong>
+<ul>
+<li>抛出 <code>RejectedExecutionException</code>异常</li>
+</ul>
+</li>
+<li><strong><code>ThreadPoolExecutor.CallerRunsPolicy</code></strong> ：调用执行自己的线程运行任务
+<ul>
+<li>直接在调用<code>execute</code>方法的线程中运行被拒绝的任务. 性能低, 延迟高, 但是不会丢弃任务</li>
+</ul>
+</li>
+<li><strong><code>ThreadPoolExecutor.DiscardPolicy</code></strong> ：直接丢弃新任务</li>
+<li><strong><code>ThreadPoolExecutor.DiscardOldestPolicy</code></strong> ： 丢弃最早未处理的任务</li>
+</ul>
+<h5 id="常见的线程池实现类"><a class="header-anchor" href="#常见的线程池实现类"></a>常见的线程池实现类</h5>
+<ul>
+<li><code>FixedThreadPool</code>: 固定线程数的线程池, 核心线程数=最大线程数, 任务队列是<code>LinkedBlockingQueue</code>无界队列, 任务较多时可能会导致OOM(内存溢出)</li>
+<li><code>SingleThreadExecutor</code>: 只有一个线程的线程池, 核心线程数=最大线程数=1, 任务队列也是<code>LinkedBlockingQueue</code>无界队列, 任务较多时可能会导致OOM(内存溢出)</li>
+<li><code>CachedThreadPool</code>: 缓存型线程池, 根据需要创建线程执行任务. 核心线程数=0, 最大线程数=Integer.MAX.VALUE, 如果主线程提交任务的速度高于<code>CachedThreadPool</code>中线程处理任务的速度时，<code>CachedThreadPool</code> 会不断创建新的线程. 极端情况下会导致耗尽 cpu 和内存资源倒是OOM(内存溢出)</li>
+</ul>
+<h4 id="线程安全"><a class="header-anchor" href="#线程安全"></a>线程安全</h4>
+<h5 id="并发编程的三个重要特性👇"><a class="header-anchor" href="#并发编程的三个重要特性👇"></a>并发编程的三个重要特性👇</h5>
+<ol>
+<li><strong>原子性</strong> : 一次操作或者多次操作，要么所有的操作全部都得到执行并且不会受到任何因素的干扰而中断，要么都不执行。<code>synchronized</code> 可以保证代码片段的原子性</li>
+<li><strong>可见性</strong> ：当一个线程对共享变量进行了修改，那么另外的线程都是立即可以看到修改后的最新值。<code>volatile</code> 关键字可以保证共享变量的可见性</li>
+<li><strong>有序性</strong> ：代码在执行的过程中的先后顺序，Java 在编译器以及运行期间的优化，代码的执行顺序未必就是编写代码时候的顺序。<code>volatile</code> 关键字可以禁止指令进行重排序优化</li>
+</ol>
+<h5 id="如何保证线程安全"><a class="header-anchor" href="#如何保证线程安全"></a>如何保证线程安全</h5>
+<p>使用线程安全的类; 利用<code>synchronized</code>/<code>volatile</code>关键字</p>
+<ul>
+<li>
+<p><code>synchronized</code> 关键字可以修饰实例方法, 静态方法, 和代码块</p>
+</li>
+<li>
+<p><code>synchronized</code> 关键字加到 <code>static</code> 静态方法和 <code>synchronized(class)</code> 代码块上都是是给 Class 类上锁</p>
+</li>
+<li>
+<p><code>synchronized</code> 关键字加到实例方法上是给对象实例上锁</p>
+</li>
+<li>
+<p><code>volatile</code> 关键字是线程同步的轻量级实现, 性能比<code>synchronized</code>要好, 但<strong>只能修饰变量</strong></p>
+</li>
+<li>
+<p><code>volatile</code> 关键字能保证数据的可见性和有序性,但不能保证数据的原子性.<code>synchronized</code>都能保证</p>
+</li>
+<li>
+<p><code>volatile</code> 关键字主要用于解决变量在多个线程之间的可见性, 而<code>synchronized</code>解决的是多个线程之间访问资源的同步性</p>
+</li>
+</ul>
+<h2 id="框架-TODO"><a class="header-anchor" href="#框架-TODO"></a>框架(TODO)</h2>
+<h3 id="SpringBoot"><a class="header-anchor" href="#SpringBoot"></a>SpringBoot</h3>
+<h3 id="MyBatis"><a class="header-anchor" href="#MyBatis"></a>MyBatis</h3>
 
                 
             </div>
@@ -727,7 +731,7 @@ server:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://visitor23.github.io.git/2022/03/01/dubbo-quickstart/">https://visitor23.github.io.git/2022/03/01/dubbo-quickstart/</a>
+                    <a href="https://visitor23.github.io.git/2022/04/21/bi-ji/">https://visitor23.github.io.git/2022/04/21/bi-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -765,16 +769,8 @@ server:
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%90%8E%E7%AB%AF/">
-                                    <span class="chip bg-color">后端</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">
-                                    <span class="chip bg-color">分布式</span>
-                                </a>
-                            
-                                <a href="/tags/Dubbo/">
-                                    <span class="chip bg-color">Dubbo</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
                         </div>
@@ -818,28 +814,30 @@ server:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/03/07/mysql-fen-ku-fen-biao/">
+                <a href="/2022/04/21/bi-ji/">
                     <div class="card-image">
                         
-                        <img src="https://2022-04-02-1309634420.cos.ap-beijing.myqcloud.com/MySql%2FMySql-logo.png" class="responsive-img" alt="MySql分库分表">
                         
-                        <span class="card-title">MySql分库分表</span>
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            MySql分库分表
+                            笔记
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -848,23 +846,12 @@ server:
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%90%8E%E7%AB%AF/">
-                        <span class="chip bg-color">后端</span>
-                    </a>
-                    
-                    <a href="/tags/MySql/">
-                        <span class="chip bg-color">MySql</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">数据库</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8/">
-                        <span class="chip bg-color">分库分表</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
@@ -878,30 +865,31 @@ server:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/27/rabbitmq-quickstart/">
+                <a href="/2022/04/08/mysql-url/">
                     <div class="card-image">
                         
-                        <img src="https://2022-04-02-1309634420.cos.ap-beijing.myqcloud.com/RabbitMQ/RabbitMQ.jpg" class="responsive-img" alt="RabbitMQ-quickStart">
                         
-                        <span class="card-title">RabbitMQ-quickStart</span>
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Util">
+                        
+                        <span class="card-title">Util</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            RabbitMQ快速开始示例
+                            常用工具代码
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/quickStart/" class="post-category">
-                                    quickStart
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    工具
                                 </a>
                             
                             
@@ -915,12 +903,16 @@ server:
                         <span class="chip bg-color">后端</span>
                     </a>
                     
-                    <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">
-                        <span class="chip bg-color">消息队列</span>
+                    <a href="/tags/JDBC/">
+                        <span class="chip bg-color">JDBC</span>
                     </a>
                     
-                    <a href="/tags/RabbitMQ/">
-                        <span class="chip bg-color">RabbitMQ</span>
+                    <a href="/tags/MySql/">
+                        <span class="chip bg-color">MySql</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
                     </a>
                     
                 </div>
